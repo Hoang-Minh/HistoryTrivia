@@ -130,7 +130,12 @@ $(document).ready(function(){
     function displayAnswer(){
         var timerTag = $("#timer");
         timerTag.addClass("text-danger");
-        timerTag.text("Time out !!!!");                
+        if(count > 0) {
+            timerTag.text("Your choice is incorrect"); 
+        }
+        else {
+            timerTag.text("Time out !!!!");   
+        }
         
         $(".challenge").empty(); // reset question and answer
 
