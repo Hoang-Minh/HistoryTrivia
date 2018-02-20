@@ -3,7 +3,7 @@ $(document).ready(function(){
     var randomIndex;
     var win = 0;
     var loss = 0;
-    var timeToAnswer = 5; // time in seconds to have to answer a question
+    var timeToAnswer = 30; // time in seconds to have to answer a question
     var count = timeToAnswer;
     var timer = null;
 
@@ -91,21 +91,20 @@ $(document).ready(function(){
     }
 
     // display random question
-    function displayQuestion(){
+    function displayQuestion(){        
+        var gameStats = $("<div class='stats text-center text-info'><h3><u>Game Stats:</u></h3><div>Win: <span id='win'></span></div><div>Loss: <span id='loss'></span></div></div>")
+        $("#game-play").prepend(gameStats); // add in front
+
         count = timeToAnswer; // reset time
         $("#timer").text(count); // display initial time
         timer = setInterval(countdowntimer, 1000);
-        // debugger
         pickedQuestion = getPickedQuestion();
-        
-        console.log("option length: " + options.length)
         
         $("#win").text(win);
         $("#loss").text(loss);
 
         if(options.length > 0){
-            //<p class="text-primary">This text is important.</p>
-            // var questionTag = $("<div>" + pickedQuestion.question + "</div>");
+            
             var questionTag = $("<p class='text-success font-weight-bold question'>" + pickedQuestion.question + "</p>");
             $(".challenge").empty(); // reset question and answer
             $(".challenge").append(questionTag);
@@ -119,8 +118,11 @@ $(document).ready(function(){
             options.splice(randomIndex, 1);     // remove from the options
         }
         else {
-            $(".container").empty();
-            clearInterval(timer);
+            clearInterval(timer);            
+            $("#time-remain").empty();
+            $(".stats").remove();
+            $(".challenge").empty();
+            $("#top-header").append(gameStats);
         }
     }
 
@@ -128,8 +130,8 @@ $(document).ready(function(){
     function displayAnswer(){
         var timerTag = $("#timer");
         timerTag.addClass("text-danger");
-        timerTag.text("Time out !!!!");
-                
+        timerTag.text("Time out !!!!");                
+        
         $(".challenge").empty(); // reset question and answer
 
         var answerIndex = pickedQuestion.answer;
@@ -155,13 +157,15 @@ $(document).ready(function(){
         if(value == pickedQuestion.answer) { // don't care about type, let compiler convert and compare
             win++;
             console.log(win);
-            clearInterval(timer);             
+            clearInterval(timer);
+            $(".stats").remove()             
             displayQuestion();
         }
         else {
             loss++;
             console.log(loss);
             clearInterval(timer);
+            $(".stats").remove();
             displayAnswer();
         }
     })  

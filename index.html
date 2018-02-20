@@ -11,22 +11,15 @@
 </head>
 <body>
     <div class="container">
-        <div class="jumbotron text-center">
+        <div class="jumbotron text-center" id="top-header">
             <h1>History Trivia</h1> 
             <p>How many questions can you answer correctly?</p>
-            <hr class="my-4">
-            <!-- <p class="time-remain">Time Remaining: <span id="timer"></span></p>  -->
-            <!-- <div class="well well-lg">Large Well</div> -->
-            <div class="well well-lg">Time Remaining: <span id="timer"></span></div>
-        </div>
-        
-        <div class="stats text-center text-info">
-            <h3><u>Game Stats:</u></h3>
-            <div>Win: <span id="win"></span></div>
-            <div>Loss: <span id="loss"></span></div>
-        </div>
-
-        <div class="challenge text-center"></div>
+            <hr class="my-4">            
+            <div class="well well-lg" id="time-remain">Time Remaining: <span id="timer"></span></div>
+        </div>        
+        <div id="game-play">
+            <div class="challenge text-center"></div>
+        </div>        
     </div>    
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
