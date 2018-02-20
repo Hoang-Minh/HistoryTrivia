@@ -1,0 +1,38 @@
+body {
+    background: url("../images/background1.png")
+}
+
+.container {
+    background: url("../images/background.png")
+}
+
+img {
+    height: 300px;
+    width: 300px;
+    margin-top: 50px;
+}
+
+.challenge {
+    padding: 50px;
+}
+
+.answer {
+    margin: 5px;
+    padding: 10px;
+}
+
+.stats {
+    /* padding: 50px; */
+    margin-top: 30px;
+    font-weight: bold; 
+}
+
+.correct-answer {
+    font-weight: bold;
+    color: green;
+    font-size: 18px;
+}
+
+#continue {
+    margin-top: 50px;
+}

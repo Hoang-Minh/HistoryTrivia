@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>History Trivia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />    
+    
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>History Trivia</h1> 
+            <p>How many questions can you answer correctly?</p>
+            <hr class="my-4">
+            <!-- <p class="time-remain">Time Remaining: <span id="timer"></span></p>  -->
+            <!-- <div class="well well-lg">Large Well</div> -->
+            <div class="well well-lg">Time Remaining: <span id="timer"></span></div>
+        </div>
+        
+        <div class="stats text-center text-info">
+            <h3><u>Game Stats:</u></h3>
+            <div>Win: <span id="win"></span></div>
+            <div>Loss: <span id="loss"></span></div>
+        </div>
+
+        <div class="challenge text-center"></div>
+    </div>    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
+
+
