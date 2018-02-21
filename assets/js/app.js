@@ -3,7 +3,7 @@ $(document).ready(function(){
     var randomIndex;
     var win = 0;
     var loss = 0;
-    var timeToAnswer = 30; // time in seconds to have to answer a question
+    var timeToAnswer = 5; // time in seconds to have to answer a question
     var count = timeToAnswer;
     var timer = null;
 
@@ -123,6 +123,7 @@ $(document).ready(function(){
             $(".stats").remove();
             $(".challenge").empty();
             $("#top-header").append(gameStats);
+            // do restart game here
         }
     }
 
@@ -176,6 +177,7 @@ $(document).ready(function(){
     })  
 
     $(document).on("click", "#continue", function(){
+        $(".stats").remove();
         displayQuestion();
     })
 

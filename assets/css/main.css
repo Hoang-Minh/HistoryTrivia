@@ -6,6 +6,11 @@ body {
     background: url("../images/background.png")
 }
 
+#top-header {
+    background-color: rgba(0,0,0,.075);
+    font-family: 'Patua One', cursive;
+}
+
 img {
     height: 300px;
     width: 300px;
@@ -23,6 +28,7 @@ img {
 
 .stats {
     /* padding: 50px; */
+    font-family: 'Work Sans', sans-serif;
     margin-top: 30px;
     font-weight: bold; 
 }
