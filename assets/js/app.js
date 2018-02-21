@@ -92,7 +92,8 @@ $(document).ready(function(){
 
     // display random question
     function displayQuestion(){        
-        var gameStats = $("<div class='stats text-center text-info'><h3><u>Game Stats:</u></h3><div>Win: <span id='win'></span></div><div>Loss: <span id='loss'></span></div></div>")
+        var gameStats = $("<div class='stats text-center text-info'><h3><u>Game Stats:</u></h3><div>Win: <span id='win'></span><i class='fas fa-check'></i></div><div>Loss: <span id='loss'></span><i class='fas fa-times'></i></div></div>")
+        
         $("#game-play").prepend(gameStats); // add in front
 
         count = timeToAnswer; // reset time
@@ -107,7 +108,7 @@ $(document).ready(function(){
             
             var questionTag = $("<p class='text-success font-weight-bold question'>" + pickedQuestion.question + "</p>");
             $(".challenge").empty(); // reset question and answer
-            $(".challenge").append(questionTag);
+            $(".challenge").append(questionTag);            
     
             for(var i = 0; i < pickedQuestion.choice.length; i++){                
                 var answer = $("<button type='button' class='btn btn-info answer'>" + pickedQuestion.choice[i] + "</div>");
@@ -139,6 +140,10 @@ $(document).ready(function(){
         }
         
         $(".challenge").empty(); // reset question and answer
+
+        // create table in here
+        var table = $("<div class='container'>")
+
 
         var answerIndex = pickedQuestion.answer;
         var answer = $("<div>Correct Answer: <span class='correct-answer'>" + pickedQuestion.choice[answerIndex] + "</span></div>");
